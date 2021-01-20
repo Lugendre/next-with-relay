@@ -7,8 +7,19 @@ import * as resolvers from "./schema/resolvers";
 export const schema = makeSchema({
   types: [models, resolvers],
   plugins: [nexusPrisma({ experimentalCRUD: true })],
+  sourceTypes: {
+    modules: [
+      {
+        module: require.resolve(".prisma/client/index.d.ts"),
+        alias: "prisma",
+      },
+    ],
+  },
   outputs: {
-    typegen: path.join(process.cwd(), "generated", "nexus-type.gen.ts"),
+    typegen: path.join(
+      process.cwd(),
+      "node_modules/@types/nexus-typegen-custom/index.d.ts"
+    ),
     schema: path.join(process.cwd(), "generated", "schema.gen.graphql"),
   },
 });

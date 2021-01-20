@@ -2,6 +2,7 @@
   "name": "my-next-app",
   "version": "1.0.0",
   "scripts": {
+    "postinstall": "prisma generate && npm run schema && npm run relay",
     "dev": "concurrently -r \"npx next\" \"npm run watch:prisma\" \"npm run watch:relay\"",
     "relay": "relay-compiler",
     "build": "next build",
