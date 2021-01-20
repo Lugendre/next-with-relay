@@ -8,6 +8,5 @@ This is a really simple project that shows the usage of Next.js with TypeScript 
 $ docker-compose up -d
 $ npm install
 $ npx prisma db push --preview-feature
-$ npm run postinstall
 $ npm run dev
 ```
