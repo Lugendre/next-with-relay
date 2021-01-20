@@ -15,7 +15,7 @@ const myText = css({
   alignItems: "stretch",
 });
 
-export const SampleComponent2 = (props: IProps) => {
+export const SampleComponent2: React.FC<IProps> = (props) => {
   const [count, setCount] = React.useState(0);
   const handleClick = () => {
     console.log("クリックされました");

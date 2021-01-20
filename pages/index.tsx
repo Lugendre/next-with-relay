@@ -7,8 +7,9 @@ import {
   pages_indexQuery,
   pages_indexQueryResponse,
 } from "../generated/__relay_artifacts__/pages_indexQuery.graphql";
+import { GetStaticProps } from "next";
 
-const IndexPage = (props: pages_indexQueryResponse) => {
+const IndexPage: React.FC<pages_indexQueryResponse> = (props) => {
   if (!props?.user) return <div> Loading... </div>;
   return (
     <div>
@@ -18,7 +19,7 @@ const IndexPage = (props: pages_indexQueryResponse) => {
   );
 };
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const environment = initEnvironment({});
   const variables = {
     userID: { id: "hoge" },

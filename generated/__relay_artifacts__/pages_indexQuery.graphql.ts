@@ -34,7 +34,6 @@ query pages_indexQuery(
 
 fragment SampleComponents1_user on User {
   name
-  email
 }
 */
 
@@ -99,13 +98,6 @@ const node: ConcreteRequest = (function () {
                             "kind": "ScalarField",
                             "name": "name",
                             "storageKey": null
-                        },
-                        {
-                            "alias": null,
-                            "args": null,
-                            "kind": "ScalarField",
-                            "name": "email",
-                            "storageKey": null
                         }
                     ],
                     "storageKey": null
@@ -113,12 +105,12 @@ const node: ConcreteRequest = (function () {
             ]
         },
         "params": {
-            "cacheID": "8ec052df8cb1e131c5741bd94d82d476",
+            "cacheID": "7cc7da840fa5e4fee07cbb702c14051c",
             "id": null,
             "metadata": {},
             "name": "pages_indexQuery",
             "operationKind": "query",
-            "text": "query pages_indexQuery(\n  $userID: UserWhereUniqueInput!\n) {\n  user(where: $userID) {\n    ...SampleComponents1_user\n  }\n}\n\nfragment SampleComponents1_user on User {\n  name\n  email\n}\n"
+            "text": "query pages_indexQuery(\n  $userID: UserWhereUniqueInput!\n) {\n  user(where: $userID) {\n    ...SampleComponents1_user\n  }\n}\n\nfragment SampleComponents1_user on User {\n  name\n}\n"
         }
     } as any;
 })();

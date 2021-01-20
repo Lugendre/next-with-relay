@@ -8,7 +8,7 @@ interface Props {
   user: SampleComponents1_user;
 }
 
-export const SampleComponent1 = ({ user }: Props) => {
+export const SampleComponent1: React.FC<Props> = ({ user }) => {
   return (
     <Flex flexDirection="column" justifyContent="center" alignItems="center">
       <Flex alignItems="flex-start">
@@ -26,7 +26,6 @@ export const SampleComponent1Fragment = createFragmentContainer(
     user: graphql`
       fragment SampleComponents1_user on User {
         name
-        email
       }
     `,
   }

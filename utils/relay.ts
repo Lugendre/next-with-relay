@@ -41,7 +41,8 @@ const createEnvironment = () => {
   });
 };
 
-export const initEnvironment = (initialRecords: RecordMap | undefined) => {
+type InitEnvironment = (initialRecords: RecordMap | undefined) => Environment;
+export const initEnvironment: InitEnvironment = (initialRecords) => {
   // Create a network layer from the fetch function
   const environment = relayEnvironment ?? createEnvironment();
 
@@ -58,7 +59,8 @@ export const initEnvironment = (initialRecords: RecordMap | undefined) => {
   return relayEnvironment;
 };
 
-export const useEnvironment = (initialRecords: RecordMap | undefined) => {
+type UseEnvironment = (initialRecords: RecordMap | undefined) => Environment;
+export const useEnvironment: UseEnvironment = (initialRecords) => {
   const store = useMemo(() => initEnvironment(initialRecords), [
     initialRecords,
   ]);
